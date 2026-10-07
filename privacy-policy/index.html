@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zen Phone Lock — Privacy Policy</title>
+<style>
+  :root {
+    --bg: #f6f1e8;
+    --text: #22252a;
+    --muted: #5d6263;
+    --accent: #4f8f87;
+    --card: #ffffff;
+    --border: #d8d0c2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151817;
+      --text: #e8ecea;
+      --muted: #a3aaa7;
+      --accent: #7cc4b9;
+      --card: #1f2321;
+      --border: #333a37;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  header {
+    background: #4f8f87;
+    color: #fffdf8;
+    padding: 32px 20px;
+  }
+  header h1 { margin: 0 0 6px; font-size: 1.6rem; }
+  header p { margin: 0; opacity: 0.9; font-size: 0.95rem; }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 16px 60px;
+  }
+  section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 16px;
+  }
+  section h2 { font-size: 1.05rem; margin: 0 0 10px; }
+  section p { margin: 0 0 10px; }
+  section p:last-child, section ul:last-child { margin-bottom: 0; }
+  section ul { margin: 0 0 10px; padding-left: 20px; }
+  section li { margin-bottom: 6px; }
+  .updated { color: var(--muted); font-size: 0.85rem; margin-bottom: 24px; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  footer { max-width: 720px; margin: 0 auto; padding: 0 16px 40px; color: var(--muted); font-size: 0.85rem; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Zen Phone Lock — Privacy Policy</h1>
+  <p>App: Zen Phone Lock (com.zenphonelock.app) · Developer: SarvixByte</p>
+</header>
+<main>
+  <p class="updated">Last updated: 3 October 2026</p>
+
+  <section>
+    <h2>1. Who we are</h2>
+    <p>Zen Phone Lock ("the app") is published on Google Play by SarvixByte, operated by
+      Shreyansh Raj as an individual developer in India ("we", "us"). This policy explains what
+      data the app accesses, collects, and shares, why, and the choices you have. It applies only
+      to the Zen Phone Lock Android app.</p>
+    <p>Contact: <a href="mailto:support@sarvixbyte.com">support@sarvixbyte.com</a></p>
+  </section>
+
+  <section>
+    <h2>2. Summary</h2>
+    <ul>
+      <li>No account, no sign-in, and no analytics of our own. We do not run any server that
+        receives your data.</li>
+      <li>Your settings, allowed apps, schedules, presets, and session history are stored only on
+        your device.</li>
+      <li>Everything the app reads through Android's AccessibilityService API is processed on your
+        device and discarded immediately. It is never collected, stored, or shared.</li>
+      <li>The only data that leaves your device is collected by Google's AdMob SDK, which shows the
+        optional rewarded ads (see section 5), and Google Play Billing, which processes purchases
+        (see section 6).</li>
+      <li>We never sell your data.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. Accessibility Service API — prominent disclosure</h2>
+    <p>Zen Phone Lock uses Android's AccessibilityService API. This is the app's core feature:
+      without it, the app cannot detect or block distracting apps. Before you turn it on, the app
+      shows a disclosure explaining what is accessed and why, with two choices: "Agree" or "No
+      thanks". Only "Agree" continues to Android's Accessibility settings. Pressing Back, tapping
+      outside the message, or choosing "No thanks" never counts as consent, and the message never
+      disappears on its own. If you decline, focus sessions can't be started, because they can't
+      be enforced.</p>
+    <p>During a focus session you start, the service is used only to:</p>
+    <ul>
+      <li><strong>Detect which app or screen is open</strong> (window-change events), so an app
+        you didn't allow is replaced with a restriction screen, or a Zen Balance app is paused
+        once it passes its time limit. During any session it also tells the home screen apart from
+        Recent apps (using the launcher's screen-element names only), so pressing Home returns
+        you to Zen Phone Lock's session screen, where you open apps from its own app grid, while Recent apps keeps working for switching
+        between open apps.</li>
+      <li><strong>Read Chrome's address bar text</strong> (never page content), to check the site
+        against a small on-device list. Adult sites are blocked in every mode. In Zen Focus Lock,
+        only recognized study and work sites stay open after a short grace period. In Complete
+        Lock, only the categories or sites you chose are blocked. Other browsers are not
+        read.</li>
+      <li><strong>Detect YouTube Shorts and Instagram Reels</strong> by matching each app's own
+        internal screen-element names for its short-video player, so they stay blocked when the
+        rest of the app is allowed. No video, comment, message, or account content is
+        read.</li>
+      <li><strong>Handle floating (Picture-in-Picture) video windows</strong> of a blocked app: it
+        detects interaction with that window and may tap the window's own close button. As a last
+        resort, if a floating YouTube window can't be classified any other way, it takes a single
+        on-device screenshot of just that window (Android 11 and newer) to check whether the video
+        is vertical. The image is analyzed in memory and discarded immediately. It is never saved,
+        shown, or transmitted.</li>
+    </ul>
+    <p>The service never reads passwords, messages, form fields, or typed text. Nothing it reads is
+      logged, stored, or sent off your device. You can turn it off in Android Settings →
+      Accessibility whenever no focus session is running.</p>
+  </section>
+
+  <section>
+    <h2>4. Other permissions and what they're used for</h2>
+    <ul>
+      <li><strong>Usage access</strong> (Zen Balance and the Awareness screen): reads how many
+        minutes each app has been on screen. Computed on the fly from Android's own records, never
+        stored or transmitted.</li>
+      <li><strong>Notification access</strong> (required to start a session): during a session,
+        holds back notifications from every other app; they reappear within about two minutes of
+        the session ending. Calls, alarms, emergency alerts, and ongoing notifications (such as a
+        music player) are never held back. Only each notification's app name, category, and flags
+        are checked, never its title, text, or images.</li>
+      <li><strong>Display over other apps</strong> (optional): shows a small status bubble over a
+        blocked app's floating video, with your remaining time.</li>
+      <li><strong>Device admin</strong> (force-lock policy only): locks your screen with your own
+        existing PIN, pattern, or biometric when a session blocks something, and makes the app
+        harder to uninstall mid-session. No data wipe, no camera control. The app never sets or
+        sees your lock-screen credential. Deactivate it any time in Android Settings → Security →
+        Device admin apps.</li>
+      <li><strong>Call state</strong>: detects whether a call is ringing or active (without the
+        READ_PHONE_STATE permission) so incoming calls are never blocked. Your phone number, call
+        log, and contacts are never accessed.</li>
+      <li><strong>Installed apps list</strong>: shows your apps in the picker so you can choose
+        which stay reachable. The list never leaves your device.</li>
+      <li><strong>Network state, notifications, boot completed, exact alarms, battery-optimization
+        exemption</strong>: check you're online before an ad-based unlock, show the session
+        countdown, resume an active session or schedule after a restart, start schedules on time,
+        and stop the phone's battery manager from killing enforcement. None of these read,
+        store, or transmit personal data.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>5. Advertising (Google AdMob) — data collected and shared</h2>
+    <p>Ads appear only when you choose to watch one: "watch ads to end a session early" or "watch
+      an ad for 5 minutes of access". There are no banner or pop-up ads. The ads are served by
+      Google AdMob, a third-party SDK that starts when the app opens and collects the following
+      data, which is transferred to Google:</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Data type</th><th>Purpose</th></tr>
+        <tr><td>Approximate location (derived from IP address)</td><td>Advertising, analytics, fraud prevention</td></tr>
+        <tr><td>Device or other IDs (advertising ID)</td><td>Advertising, analytics, fraud prevention</td></tr>
+        <tr><td>App interactions (ad views and taps)</td><td>Advertising, analytics, fraud prevention</td></tr>
+        <tr><td>Crash logs and diagnostics</td><td>Analytics, fraud prevention</td></tr>
+      </table>
+    </div>
+    <p>This data is encrypted in transit and governed by Google's privacy policy
+      (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>). We never
+      receive or see it. The app only learns whether you finished an ad, to grant the unlock.</p>
+    <p>Users in the EEA, UK, and Switzerland are shown Google's consent form (User Messaging
+      Platform) before any ad is requested. You can reset or delete your advertising ID at any time
+      in Android Settings → Google → Ads. Zen Premium subscribers never need to watch ads.</p>
+  </section>
+
+  <section>
+    <h2>6. Purchases (Google Play Billing)</h2>
+    <p>Zen Premium (a monthly or yearly subscription) and the optional "pay to end a session
+      early" purchase are processed entirely by Google Play Billing. We never see or store your
+      card, UPI, or bank details. The app only receives whether a purchase succeeded. Manage or
+      cancel subscriptions in Google Play → Payments &amp; subscriptions.</p>
+  </section>
+
+  <section>
+    <h2>7. How enforcement works during a session</h2>
+    <ul>
+      <li><strong>Always reachable:</strong> incoming calls, emergency calling, Camera, Calendar,
+        Calculator, and Clock, in every mode.</li>
+      <li><strong>Google Play Store:</strong> always reachable, in every mode.</li>
+      <li><strong>Always restricted in Zen Focus Lock and Complete Lock:</strong> outgoing calls
+        from the default Phone app, social media, games, entertainment and video-streaming apps,
+        shopping, food delivery, and quick-commerce apps. This applies to the main mode, presets,
+        and schedules alike.</li>
+      <li><strong>Settings and uninstalling:</strong> Android Settings and the uninstall screen
+        are never blocked. You can always turn off the app's permissions or uninstall it. During a
+        session, opening either only shows a short reminder that doing so ends your session and
+        breaks your streak.</li>
+      <li><strong>Temporary unlock:</strong> one rewarded ad unlocks all apps for 5 minutes, up to
+        2 times per hour.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>8. Data retention and deletion</h2>
+    <p>All app data stays on your device until you delete it. Uninstalling the app removes every
+      setting, preset, schedule, and session record immediately. Because we hold no account or
+      server copy, there is nothing for us to delete on our side. To uninstall, first deactivate
+      Device admin (Settings → Security → Device admin apps). Data held by Google's AdMob or Play
+      Billing is retained under Google's own policies. You can manage it in your Google
+      account.</p>
+  </section>
+
+  <section>
+    <h2>9. Security</h2>
+    <p>App data is kept in the app's private storage, which other apps can't read. Data sent by
+      the AdMob SDK and Play Billing is encrypted in transit (HTTPS).</p>
+  </section>
+
+  <section>
+    <h2>10. Children</h2>
+    <p>Zen Phone Lock is not directed at children under 13 (or the minimum age where you live),
+      and we do not knowingly collect personal data from them. If you believe a child's data was
+      collected through the ad flow, contact us and we'll help.</p>
+  </section>
+
+  <section>
+    <h2>11. Changes to this policy</h2>
+    <p>If the app's data practices change, we'll update this page before that change ships and
+      change the "Last updated" date above.</p>
+  </section>
+
+  <section>
+    <h2>12. Contact</h2>
+    <p>SarvixByte (Shreyansh Raj) — <a href="mailto:support@sarvixbyte.com">support@sarvixbyte.com</a></p>
+  </section>
+</main>
+<footer>&copy; 2026 SarvixByte. Zen Phone Lock.</footer>
+</body>
+</html>
